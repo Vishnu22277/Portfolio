@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .plus {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <!-- Sidebar Menu -->
+    <aside class="col-3 main-menu-bg">
+      <nav class="main-menu">
+        <img src="./images/smile.png" alt="Smiling avatar" width="150" />
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li class="active"><a href="./about_me.html">About Me</a></li>
+          <li><a href="./resume.html">Resume</a></li>
+          <li><a href="./portfolio.html">Portfolio</a></li>
+          <li><a href="./testimonials.html">Testimonials</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="col-9 main-text-bg">
+      <section class="main-text">
+        <h1 class="title">About Me</h1>
+
+        <div class="pri-text">
+          <h2>I'm <span>Vishnuvardhan</span>, Data Analyst</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, fuga.</p>
+        </div>
+
+        <div class="row">
+          <!-- Stats Section -->
+          <div class="col-6">
+            <div class="exp">
+              <div class="row">
+                <div class="col-6" style="border-right: 1px dotted #fff;">
+                  <h3><span class="counter" data-count="15">0</span><span class="plus"><sup>+</sup></span></h3>
+                  <p>Years of Experience</p>
+                  <div style="border-bottom: 1px dotted #fff; margin-top: 12px;"></div>
+                </div>
+                <div class="col-6">
+                  <h3><span class="counter" data-count="350">0</span><span class="plus"><sup>+</sup></span></h3>
+                  <p>Projects Done in Year</p>
+                  <div style="border-bottom: 1px dotted #fff; margin-top: 12px;"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6" style="border-right: 1px dotted #fff;">
+                  <h3><span class="counter" data-count="280">0</span><span class="plus"><sup>+</sup></span></h3>
+                  <p>Happy Clients</p>
+                </div>
+                <div class="col-6" style="border-left: 1px dotted #fff;">
+                  <h3><span class="counter" data-count="45">0</span><span class="plus">K</span></h3>
+                  <p>Followers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Section -->
+          <div class="col-6">
+            <div class="exp-desc">
+              <h4>What I Do?</h4>
+              <div>
+                <i class="fa-solid fa-bezier-curve"></i>
+                <div>
+                  <h4>Data Analysis</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolores.</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-bezier-curve"></i>
+                <div>
+                  <h4>Data Visualization</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolores.</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-bezier-curve"></i>
+                <div>
+                  <h4>Machine Learning</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolores.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Floating Icon Menu -->
+  <nav class="icon-menu">
+    <ul>
+      <li><a href="./index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="./about_me.html"><i class="fa-solid fa-user active"></i></a></li>
+      <li><a href="./resume.html"><i class="fa-solid fa-briefcase"></i></a></li>
+      <li><a href="./portfolio.html"><i class="fa-solid fa-desktop"></i></a></li>
+      <li><a href="./testimonials.html"><i class="fa-solid fa-bullhorn"></i></a></li>
+      <li><a href="./contact.html"><i class="fa-solid fa-paper-plane"></i></a></li>
+    </ul>
+  </nav>
+
+  <!-- Counter Animation Script -->
+  <script>
+    document.querySelectorAll(".counter").forEach(counter => {
+      const target = +counter.getAttribute("data-count");
+      let count = 0;
+
+      const updateCount = () => {
+        if (count < target) {
+          count++;
+          counter.innerText = count;
+        } else {
+          clearInterval(interval);
+        }
+      };
+
+      const interval = setInterval(updateCount, 10);
+    });
+  </script>
+</body>
+</html>

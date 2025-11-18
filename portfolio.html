@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .listitems.hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <!-- Sidebar Menu -->
+    <aside class="col-3 main-menu-bg">
+      <nav class="main-menu">
+        <img src="./images/smile.png" alt="Smiling avatar" width="150" />
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about_me.html">About Me</a></li>
+          <li><a href="./resume.html">Resume</a></li>
+          <li class="active"><a href="./portfolio.html">Portfolio</a></li>
+          <li><a href="./testimonials.html">Testimonials</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="col-9 main-text-bg">
+      <section class="main-text">
+        <h1 class="title">Portfolio</h1>
+
+        <!-- Filter Menu -->
+        <div class="portfolio-menu">
+          <ul>
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="analytics">Data Analytics</li>
+            <li class="list" data-filter="science">Data Science</li>
+            <li class="list" data-filter="ai">AI/ML</li>
+          </ul>
+        </div>
+
+        <!-- Portfolio Items -->
+        <div class="portfolio-img">
+          <div class="listitems data_analytics" data-item="analytics">
+            <img src="./images/data analytics.2.jpg" alt="Data Analytics Project" width="250" />
+            <img src="./images/data analytics.3.jpg" alt="Data Analytics Project" width="250" />
+            <img src="./images/data_analytics.4.jpg" alt="Data Analytics Project" width="250" />
+          </div>
+
+          <div class="listitems data_science" data-item="science">
+            <img src="./images/data_science.4.jpg" alt="Data Science Project" width="250" />
+            <img src="./images/data_science.2.jpg" alt="Data Science Project" width="250" />
+            <img src="./images/data_science.3.jpg" alt="Data Science Project" width="250" />
+         
+          </div>
+
+          <div class="listitems ai_ml" data-item="ai">
+            <img src="https://th.bing.com/th/id/OIP.Ffwy-GiM9YjuHtJ1PBvkcAHaEf?rs=1&pid=ImgDetMain" alt="AI/ML Project" width="250" />
+            <img src="./images/Ai_ml.2.jpg" alt="AI/ML Project" width="250" />
+            <img src="./images/Ai_ml.3.jpg" alt="AI/ML Project" width="250" />
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Floating Icon Menu -->
+  <nav class="icon-menu">
+    <ul>
+      <li><a href="./index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="./about_me.html"><i class="fa-solid fa-user"></i></a></li>
+      <li><a href="./resume.html"><i class="fa-solid fa-briefcase"></i></a></li>
+      <li><a href="./portfolio.html"><i class="fa-solid fa-desktop active"></i></a></li>
+      <li><a href="./testimonials.html"><i class="fa-solid fa-bullhorn"></i></a></li>
+      <li><a href="./contact.html"><i class="fa-solid fa-paper-plane"></i></a></li>
+    </ul>
+  </nav>
+
+  <!-- Filter Script -->
+  <script>
+    const filterButtons = document.querySelectorAll('.list');
+    const portfolioItems = document.querySelectorAll('.listitems');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelector('.list.active').classList.remove('active');
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+          const category = item.getAttribute('data-item');
+          if (filter === 'all' || category === filter) {
+            item.classList.remove('hide');
+          } else {
+            item.classList.add('hide');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
